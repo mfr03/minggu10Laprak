@@ -18,32 +18,46 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/imageView2"
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            android:src="@drawable/_2982298_p0"
-            app:civ_border_color="@color/discord_gray_foreground"
-            app:civ_border_width="3dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.15" />
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iconImage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/_2982298_p0"
+        app:civ_border_color="@color/discord_gray_foreground"
+        app:civ_border_width="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/gpaIndicator"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@color/green"
+        app:civ_border_color="@color/discord_gray_foreground"
+        app:civ_border_width="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/iconImage"
+        app:layout_constraintEnd_toEndOf="@+id/iconImage"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/iconImage"
+        app:layout_constraintTop_toTopOf="@+id/iconImage"
+        app:layout_constraintVertical_bias="1.0" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/rounded_layout"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toBottomOf="@+id/iconImage"
+        app:layout_constraintVertical_bias="0.1">
 
         <TextView
             android:id="@+id/name"

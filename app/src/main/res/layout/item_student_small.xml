@@ -8,11 +8,12 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/friendImage"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:src="@drawable/_2982298_p0"
+        app:civ_border_width="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.05"
@@ -32,5 +33,19 @@
         app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toEndOf="@+id/friendImage"
         app:layout_constraintTop_toTopOf="@+id/friendImage" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/status"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@color/green"
+        app:civ_border_color="@color/discord_gray_foreground"
+        app:civ_border_width="1dp"
+        app:layout_constraintBottom_toBottomOf="@+id/friendImage"
+        app:layout_constraintEnd_toEndOf="@+id/friendImage"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/friendImage"
+        app:layout_constraintTop_toTopOf="@+id/friendImage"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

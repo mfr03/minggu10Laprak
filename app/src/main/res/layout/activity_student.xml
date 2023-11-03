@@ -7,7 +7,7 @@
     android:background="@color/discord_gray_background">
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/bannerImage"
         android:layout_width="match_parent"
         android:layout_height="120dp"
         android:scaleType="centerCrop"
@@ -19,45 +19,60 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
+        android:id="@+id/iconImage"
+        android:layout_width="100dp"
         android:layout_height="100dp"
         android:src="@drawable/_2982298_p0"
         app:civ_border_color="@color/discord_gray_foreground"
-        app:civ_border_width="3dp"
+        app:civ_border_width="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.15" />
+        app:layout_constraintVertical_bias="0.1" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/gpaIndicator"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@color/green"
+        app:civ_border_color="@color/discord_gray_foreground"
+        app:civ_border_width="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/iconImage"
+        app:layout_constraintEnd_toEndOf="@+id/iconImage"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/iconImage"
+        app:layout_constraintTop_toTopOf="@+id/iconImage"
+        app:layout_constraintVertical_bias="1.0" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/rounded_layout"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toBottomOf="@+id/iconImage"
+        app:layout_constraintVertical_bias="0.1">
 
         <TextView
             android:id="@+id/name"
             style="@style/notDiscordNameTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
             android:text="Big Name"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.05"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.05" />
+            app:layout_constraintVertical_bias="0.025" />
 
         <TextView
             android:id="@+id/subName"
@@ -65,8 +80,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
             android:text="Small Name"
-            app:layout_constraintEnd_toEndOf="@+id/name"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/name"
             app:layout_constraintTop_toBottomOf="@+id/name" />
 
@@ -89,7 +105,9 @@
             style="@style/notDiscordNameTitle.SubTitle.Small"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="12dp"
+            android:layout_marginEnd="16dp"
             android:text="ABOUT ME"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.05"
@@ -99,13 +117,15 @@
         <TextView
             android:id="@+id/description"
             style="@style/notDiscordText.Normal"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
             android:text="TextView"
+            android:textAlignment="textStart"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.05"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/about_me"
             app:layout_constraintTop_toBottomOf="@+id/about_me" />
 
         <View
@@ -113,12 +133,12 @@
             android:layout_width="0dp"
             android:layout_height="2dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="12dp"
             android:layout_marginEnd="16dp"
             android:background="@color/discord_gray_background"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/description"
             app:layout_constraintVertical_bias="0.0" />
@@ -128,7 +148,9 @@
             style="@style/notDiscordNameTitle.SubTitle.Small"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="12dp"
+            android:layout_marginEnd="8dp"
             android:text="STATISTICS"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.05"
@@ -140,7 +162,9 @@
             style="@style/notDiscordText.Normal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
             android:layout_marginBottom="32dp"
             android:text="TextView"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -150,5 +174,19 @@
             app:layout_constraintTop_toBottomOf="@+id/statistics" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@null"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/baseline_arrow_back_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

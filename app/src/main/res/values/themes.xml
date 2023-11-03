@@ -1,23 +1,37 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.Minggu10Laprak" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:statusBarColor">@color/discord_gray_background</item>
     </style>
 
     <style name="notDiscordNameTitle" parent="Widget.AppCompat.TextView">
-        <item name="android:textSize">18sp</item>
+        <item name="android:textSize">24sp</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:textStyle">bold</item>
     </style>
 
     <style name="notDiscordNameTitle.SubTitle.Small" parent="notDiscordNameTitle">
-        <item name="android:textSize">10sp</item>
+        <item name="android:textSize">16sp</item>
     </style>
 
     <style name="notDiscordText.Normal" parent="notDiscordNameTitle">
-        <item name="android:textSize">10sp</item>
+        <item name="android:textSize">14sp</item>
         <item name="android:textStyle">normal</item>
     </style>
     <style name="Theme.Minggu10Laprak" parent="Base.Theme.Minggu10Laprak" />
+
+    <style name="Theme.Minggu10Laprak.WithActionBar" parent="Theme.Material3.DayNight">
+        <item name="title">MyClass</item>
+        <item name="android:statusBarColor">@color/discord_gray_background</item>
+        <item name="actionBarStyle">@style/CustomActionBar</item>
+    </style>
+
+    <style name="CustomActionBarTitle" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="CustomActionBar" parent="Widget.AppCompat.ActionBar">
+        <item name="background">@color/discord_gray_background</item>
+        <item name="titleTextStyle">@style/CustomActionBarTitle</item>
+    </style>
 </resources>

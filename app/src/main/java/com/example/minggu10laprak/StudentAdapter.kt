@@ -3,6 +3,8 @@ package com.example.minggu10laprak
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.example.minggu10laprak.databinding.ItemStudentBinding
 import com.example.minggu10laprak.databinding.ItemStudentSmallBinding
 
@@ -15,10 +17,31 @@ class StudentAdapter(private val studentList: List<Student>, val onClickStudent:
         fun bind(student: Student) {
             with(binding) {
                 friendName.text = student.name
-//                friendImage.setImageResource(student.image)
 
+                if(student.iconImage != "") {
+                    putIconImage(student.iconImage)
+                } else {
+                    friendImage.setImageResource(student.iconImageDefault)
+                }
+
+                checkGPA(student.gpa)
                 itemView.setOnClickListener { onClickStudent(student) }
             }
+        }
+        fun checkGPA(gpa: Double) {
+            if (gpa >= 3.5) {
+                binding.status.setImageResource(R.color.green)
+            } else if (gpa >= 2.0) {
+                binding.status.setImageResource(R.color.blue)
+            } else {
+                binding.status.setImageResource(R.color.red)
+            }
+        }
+
+        fun putIconImage(image: String) {
+            Glide.with(itemView.context)
+                .load(image)
+                .into(binding.friendImage)
         }
     }
 
@@ -36,5 +59,7 @@ class StudentAdapter(private val studentList: List<Student>, val onClickStudent:
     override fun onBindViewHolder(holder: ItemStudentViewHolder, position: Int) {
         holder.bind(studentList[position])
     }
+
+
 
 }
